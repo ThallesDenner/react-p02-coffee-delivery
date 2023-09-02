@@ -8,21 +8,19 @@ import { HeaderContainer } from "./styles";
 export function Header() {
   return (
     <HeaderContainer>
-      <figure>
-        <img src={logo} alt="Copo de café" />
-      </figure>
-      <nav>
+      <img src={logo} alt="Copo de café" />
+      <div>
         <div>
           <MapPin size={22} weight="fill" />
           <span>Goiânia, GO</span>
         </div>
-        <div>
+        <nav>
           <NavLink to="/checkout" title="Carrinho de compras">
             <ShoppingCart size={22} weight="fill" />
           </NavLink>
           <span>3</span>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </HeaderContainer>
   );
 }

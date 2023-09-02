@@ -5,27 +5,41 @@ import { DeliveryInformationContainer } from "./styles";
 export function DeliveryInformation() {
   return (
     <DeliveryInformationContainer>
-      <div>
-        <MapPin size={16} weight="fill" />
+      <li>
         <div>
-          <span>Entrega na {`Rua blá blá, 100`}</span>
-          <span>{`Bairro - Cidade - UF`}</span>
+          <MapPin size={16} weight="fill" />
         </div>
-      </div>
-      <div>
-        <Timer size={16} weight="fill" />
         <div>
-          <span>Previsão de entrega</span>
-          <span>20min - 30min</span>
+          <div>
+            Entrega na <b>{`Rua blá blá, 100`}</b>
+          </div>
+          <div>
+            <b>{`Bairro - Cidade - UF`}</b>
+          </div>
         </div>
-      </div>
-      <div>
-        <CurrencyDollar size={16} />
+      </li>
+      <li>
         <div>
-          <span>Pagamento na entrega</span>
-          <span>{`Cartão de Crédito`}</span>
+          <Timer size={16} weight="fill" />
         </div>
-      </div>
+        <div>
+          <div>Previsão de entrega</div>
+          <div>
+            <b>20min - 30min</b>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <CurrencyDollar size={16} />
+        </div>
+        <div>
+          <div>Pagamento na entrega</div>
+          <div>
+            <b>{`Cartão de Crédito`}</b>
+          </div>
+        </div>
+      </li>
     </DeliveryInformationContainer>
   );
 }

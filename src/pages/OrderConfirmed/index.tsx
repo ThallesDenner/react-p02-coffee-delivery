@@ -11,12 +11,10 @@ export function OrderConfirmed() {
       <p>Agora é só aguardar que logo o café chegará até você</p>
       <div>
         <DeliveryInformation />
-        <figure>
-          <img
-            src={orderDelivery}
-            alt="Motoboy levando o pedido para o cliente"
-          />
-        </figure>
+        <img
+          src={orderDelivery}
+          alt="Motoboy levando o pedido para o cliente"
+        />
       </div>
     </OrderConfirmedContainer>
   );

@@ -1,56 +1,16 @@
-import { Trash } from "phosphor-react";
-import { Counter } from "../../../../components/Counter";
-
+import { CartItem } from "../CartItem";
 import { OrderDetailsContainer } from "./styles";
 import { NavLink } from "react-router-dom";
 
 export function OrderDetails() {
   return (
     <OrderDetailsContainer>
-      <ul>
-        <li>
-          <div>
-            <figure>
-              <img
-                src="src/assets/images/capuccino.png"
-                alt="Xícara com café"
-              />
-            </figure>
-            <div>
-              <h3>Cappucino</h3>
-              <div>
-                <Counter />
-                <button>
-                  <Trash size={16} /> REMOVER
-                </button>
-              </div>
-            </div>
-          </div>
-          <div>R$ 9,90</div>
-        </li>
+      <div>
+        <CartItem />
         <hr />
-        <li>
-          <div>
-            <figure>
-              <img
-                src="src/assets/images/cubano.png"
-                alt="Xícara com café"
-              />
-            </figure>
-            <div>
-              <h3>Cubano</h3>
-              <div>
-                <Counter />
-                <button>
-                  <Trash size={16} /> REMOVER
-                </button>
-              </div>
-            </div>
-          </div>
-          <div>R$ 9,90</div>
-        </li>
+        <CartItem />
         <hr />
-      </ul>
+      </div>
       <div>
         <div>
           <span>Total de itens</span>
@@ -66,7 +26,7 @@ export function OrderDetails() {
         </div>
       </div>
       {/* <button>CONFIRMAR PEDIDO</button> */}
-      <NavLink to="/order-confirmed">CONFIRMAR PEDIDO</NavLink>
+      <NavLink to="/order-confirmed">Confirmar Pedido</NavLink>
     </OrderDetailsContainer>
   );
 }
