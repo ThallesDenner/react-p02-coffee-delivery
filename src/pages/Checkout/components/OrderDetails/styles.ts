@@ -32,7 +32,7 @@ export const OrderDetailsContainer = styled.div`
         font-size: 1rem;
         line-height: 1.3;
       }
-      
+
       &:last-child span {
         color: ${(props) => props.theme["base-subtitle"]};
         font-size: 1.25rem;
@@ -41,10 +41,7 @@ export const OrderDetailsContainer = styled.div`
     }
   }
 
-  a {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+  & > button {
     padding: 0.75rem 0.5rem;
     background-color: ${(props) => props.theme["yellow"]};
     border: 0;
@@ -53,8 +50,12 @@ export const OrderDetailsContainer = styled.div`
     font-size: 0.875rem;
     font-weight: 700;
     /* line-height: 1.6; */
-    text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  & > button:hover {
+    background-color: ${(props) => props.theme["yellow-dark"]};
   }
 
   @media (max-width: 768px) {

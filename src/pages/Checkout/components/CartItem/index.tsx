@@ -1,17 +1,35 @@
 import { CartInputOutput } from "../../../../components/CartInputOutput";
+
+import { priceFormatter } from "../../../../utils/formatter";
+
 import { CartItemContainer } from "./styles";
 
-export function CartItem() {
+export interface OrderItemType {
+  id: number;
+  imageUrl: string;
+  title: string;
+  price: number;
+  amount: number;
+}
+
+interface OrderItemProps {
+  coffee: OrderItemType;
+}
+
+export function CartItem({ coffee }: OrderItemProps) {
+  const { id, imageUrl, title, price, amount } = coffee;
+  const totalValue = price * amount;
+
   return (
     <CartItemContainer>
       <div>
-        <img src="src/assets/images/capuccino.png" alt="Xícara com café" />
+        <img src={imageUrl} alt="Xícara com café" />
         <div>
-          <h3>Cappucino</h3>
-          <CartInputOutput action="remove" />
+          <h3>{title}</h3>
+          <CartInputOutput coffeeId={id} amountOfCoffee={amount} isAtCheckout />
         </div>
       </div>
-      <span>R$ 9,90</span>
+      <span>{priceFormatter.format(totalValue)}</span>
     </CartItemContainer>
   );
 }

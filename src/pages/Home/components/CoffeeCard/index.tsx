@@ -16,7 +16,7 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
-  const { imageUrl, title, description, characteristics, price } = coffee;
+  const { id, imageUrl, title, description, characteristics, price } = coffee;
 
   return (
     <CoffeeCardContainer>
@@ -32,7 +32,7 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
         <span>
           R$ <b>{price.toFixed(2).replace(".", ",")}</b>
         </span>
-        <CartInputOutput action="add" />
+        <CartInputOutput coffeeId={id} />
       </div>
     </CoffeeCardContainer>
   );

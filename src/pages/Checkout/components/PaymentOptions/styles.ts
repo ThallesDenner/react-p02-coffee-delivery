@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PaymentDetailsContainer = styled.div`
+export const PaymentOptionsContainer = styled.div`
   margin-top: 0.75rem;
   padding: 2.5rem;
   background-color: ${(props) => props.theme["base-card"]};
@@ -52,7 +52,7 @@ export const PaymentDetailsContainer = styled.div`
       /* gap: 0.75rem; */
       flex: 1 0 0;
       padding-left: 1rem;
-      background-color: ${(props) => props.theme['base-button']};
+      background-color: ${(props) => props.theme["base-button"]};
       border: 1px solid transparent;
       border-radius: 6px;
       font-size: 0.75rem;
@@ -60,12 +60,12 @@ export const PaymentDetailsContainer = styled.div`
       /* line-height: 1.6; */
 
       svg {
-        color: ${(props) => props.theme['purple']};
+        color: ${(props) => props.theme["purple"]};
       }
 
       &:has(input[type="radio"]:checked) {
-        background-color: ${(props) => props.theme['purple-light']};
-        border: 1px solid ${(props) => props.theme['purple']};
+        background-color: ${(props) => props.theme["purple-light"]};
+        border: 1px solid ${(props) => props.theme["purple"]};
       }
 
       label {
@@ -77,6 +77,10 @@ export const PaymentDetailsContainer = styled.div`
         padding-right: 1rem;
         cursor: pointer;
       }
+    }
+
+    & > div:hover {
+      background-color: ${(props) => props.theme["base-hover"]};
     }
   }
 

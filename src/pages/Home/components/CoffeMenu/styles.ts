@@ -16,10 +16,9 @@ export const CoffeeMenuContainer = styled.section`
   }
 
   & > div {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 16rem);
     justify-content: center;
-    /* align-items: flex-start; */
     gap: 2rem;
   }
 

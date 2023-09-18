@@ -28,7 +28,7 @@ export const DeliveryAddressContainer = styled.div`
     }
   }
 
-  form {
+  & > div {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -63,12 +63,18 @@ export const DeliveryAddressContainer = styled.div`
         /* line-height: 1.3; */
       }
     }
+
+    small {
+      margin-top: 0.25rem;
+      display: block;
+      color: ${(props) => props.theme["form-error"]};
+    }
   }
 
   @media (max-width: 768px) {
     padding: 1rem;
 
-    form {
+    & > div {
       & > div:nth-child(3),
       & > div:nth-child(4) {
         flex-direction: column;

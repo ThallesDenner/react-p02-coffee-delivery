@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CartInputOutputContainer = styled.div`
+export const CartInputOutputContainer = styled.form`
   display: flex;
   gap: 0.5rem;
 

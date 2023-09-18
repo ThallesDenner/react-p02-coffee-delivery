@@ -1,10 +1,15 @@
+import { useFormContext } from "react-hook-form";
 import { Bank, CreditCard, CurrencyDollar, Money } from "phosphor-react";
 
-import { PaymentDetailsContainer } from "./styles";
+import { CheckoutFormDataType } from "../..";
 
-export function PaymentDetails() {
+import { PaymentOptionsContainer } from "./styles";
+
+export function PaymentOptions() {
+  const { register } = useFormContext<CheckoutFormDataType>();
+
   return (
-    <PaymentDetailsContainer>
+    <PaymentOptionsContainer>
       <header>
         <CurrencyDollar size={22} />
         <div>
@@ -20,8 +25,9 @@ export function PaymentDetails() {
           <input
             type="radio"
             id="creditPayment"
-            name="paymentMethods"
             value="Cartão de Crédito"
+            required
+            {...register("paymentMethod")}
           />
           <label htmlFor="creditPayment">Cartão de Crédito</label>
         </div>
@@ -30,8 +36,8 @@ export function PaymentDetails() {
           <input
             type="radio"
             id="debitPayment"
-            name="paymentMethods"
             value="Cartão de Débito"
+            {...register("paymentMethod")}
           />
           <label htmlFor="debitPayment">Cartão de Débito</label>
         </div>
@@ -40,12 +46,12 @@ export function PaymentDetails() {
           <input
             type="radio"
             id="cashPayment"
-            name="paymentMethods"
             value="Dinheiro"
+            {...register("paymentMethod")}
           />
           <label htmlFor="cashPayment">Dinheiro</label>
         </div>
       </div>
-    </PaymentDetailsContainer>
+    </PaymentOptionsContainer>
   );
 }
